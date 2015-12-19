@@ -31,8 +31,8 @@ sudo apt-get install logstash
 
 # Usage
 
-sample configuration files can be found in config folder. You can copy the blank.conf file and rename it to something else and start adding your configurations.
-You should store the raw log files in the input folder and output stuffs in output folder. That is how you can everything neat and organized.
+sample configuration files can be found in config folder. You can copy the blank.conf file and rename it to something else and start adding your configurations. You should store the raw log files in the input folder and output stuffs in output folder. The patterns folder is where you can store your custom patterns for grok plugin.
+That is how you can everything neat and organized.
 
 Processing a file is as simple as:
 ```
