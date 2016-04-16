@@ -52,7 +52,12 @@ replace the your.conf with whatever config file you had written.
 
 ## Troubleshooting
 
-- If logstash is not outputting anything, try clearing the sincedb
+If logstash is not outputting anything, try clearing the sincedb
 ```
 rm -rf .sincedb*
+```
+You can also pass v argument to make logstash more verbose on what it is doing.
+example:
+```
+/opt/logstash/bin/logstash agent -f logstash.conf -v
 ```
