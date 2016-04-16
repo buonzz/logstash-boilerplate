@@ -61,3 +61,10 @@ example:
 ```
 /opt/logstash/bin/logstash agent -f logstash.conf -v
 ```
+logstash's default behaviour is to continously watch the input file for any new data. If you want to just process the file one-time only. You can use this [config](https://github.com/buonzz/logstash-boilerplate/blob/master/config/process_and_exit.conf)
+then pass the input file as 
+
+```
+logstash agent -f process_exit.conf < logfile.log
+```
+logstash will exit as soon as it is done processing the file
