@@ -52,15 +52,6 @@ replace the your.conf with whatever config file you had written.
 
 ## Troubleshooting
 
-If logstash is not outputting anything, try clearing the sincedb
-```
-rm -rf .sincedb*
-```
-You can also pass v argument to make logstash more verbose on what it is doing.
-example:
-```
-/opt/logstash/bin/logstash agent -f logstash.conf -v
-```
 logstash's default behaviour is to continously watch the input file for any new data. If you want to just process the file one-time only. You can use this [config](https://github.com/buonzz/logstash-boilerplate/blob/master/config/process_and_exit.conf)
 then pass the input file as 
 
@@ -68,3 +59,20 @@ then pass the input file as
 logstash agent -f process_exit.conf < logfile.log
 ```
 logstash will exit as soon as it is done processing the file
+
+
+If you want logstash to re-read the entire file, try clearing the sincedb.
+```
+rm -rf .sincedb*
+```
+If logstash is not outputting anything, You can  pass v argument to make logstash more verbose on what it is doing.
+example:
+
+```
+logstash agent -f logstash.conf -v
+```
+or at worst case, enable debug mode:
+
+```
+logstash agent -f logstash.conf --debug
+```
