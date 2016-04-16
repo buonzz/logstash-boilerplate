@@ -28,6 +28,14 @@ sudo apt-get update
 sudo apt-get install logstash
 ```
 
+You can just also use a prebuilt VM with ELK installed
+```
+git clone https://github.com/comperiosearch/vagrant-elk-box
+cd vagrant-elk-box
+vagrant up
+vagrant ssh
+```
+
 
 # Usage
 
@@ -40,3 +48,11 @@ logstash -f config/your.conf
 ``` 
 
 replace the your.conf with whatever config file you had written.
+
+
+## Troubleshooting
+
+- If logstash is not outputting anything, try clearing the sincedb
+```
+rm -rf .sincedb*
+```
